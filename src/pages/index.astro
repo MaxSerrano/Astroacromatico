@@ -1,165 +1,168 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
-import Boton from '../components/Boton.astro';
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+import Boton from "../components/Boton.astro";
+import { contentfulClient } from "../lib/contentful";
+import type { BlogPost } from "../lib/contentful";
+
 
 ---
 
-<Layout title='Max Serrano | Links'>
-			
-	<main>
-		<div class="posicionf">
-			<img class="imagen"
-			  src="/otomia.jpg"
-			  alt="mi foto"
-			   />
-		</div>
-		<h1><span class="text-gradient">Max Serrano</span></h1>
-		<p class="instructions">
-			Ingeniero en computación con espectativas de crecer tanto profesional como personalmente, con grandes capacidades de aprendizaje.<br />
-			<strong>Principales metas:</strong> Hacer crecer mi conocimiento en distintos ambitos, tanto laborales como personales.
-		</p>
 
-		<Boton
-			ref="/vcard.png"
-			title="VCARD"
-			des="vcard.png"
-		/>
-		<!-- 
+<Layout title="Max Serrano | Links">
+  <main>
+    <div class="posicionf">
+      <img
+        class="imagen"
+        src="/otomia.jpg"
+        alt="mi foto"
+       
+      />
+    </div>
+    <h1><span class="text-gradient">Max Serrano</span></h1>
+    <p class="instructions">
+      Ingeniero en computación con espectativas de crecer tanto profesional como
+      personalmente, con grandes capacidades de aprendizaje.<br />
+      <strong>Principales metas:</strong> Hacer crecer mi conocimiento en
+      distintos ambitos, tanto laborales como personales.
+    </p>
+
+    <Boton ref="/vcard.png" title="VCARD" des="vcard.png" />
+    <!-- 
 		<div class="vcardposition">	
 		<a class="vcard" href="/vcard.png" download="vcard.png">vcard</a>
 	    </div>
 
 		<div class="cardposition">
 			-->
-			<h2>Enlaces Personales </h2>
-	<h2></h2>
-	<ul role="list" class="link-card-grid">
-			<Card
-				href="https://www.facebook.com/max.serrano3/"
-				title="Facebook"
-				body="Red social más utilizado en ambito personal."
-				licon="/acebook.svg"
-		
-			/>
-			<Card
-				href="https://open.spotify.com/user/semterras"
-				title="Spotify"
-				body="La música que más me atrae."
-				licon="/potify.svg"
-			/>
-			<Card
-				href="https://pin.it/1CiczMN"
-				title="pinterest"
-				body="Explore a galaxy of community-built starter themes."
-				licon="/interest.svg"
-			/>
-			<Card
-				href="https://www.instagram.com/yaelserr/"
-				title="Instagram"
-				body="Compartir los momentos de mi vida personal."
-				licon="/nstagram.svg"
-			/>
-		</ul>
-<!-- link perfil profesional -->
-<ul role="list" class="link-card-grid">
+    <h2>Enlaces Personales</h2>
+    <h2></h2>
+    <ul role="list" class="link-card-grid">
+      <Card
+        href="https://www.facebook.com/max.serrano3/"
+        title="Facebook"
+        body="Red social más utilizado en ambito personal."
+        licon="/acebook.svg"
+      />
+      <Card
+        href="https://open.spotify.com/user/semterras"
+        title="Spotify"
+        body="La música que más me atrae."
+        licon="/potify.svg"
+      />
+      <Card
+        href="https://pin.it/1CiczMN"
+        title="pinterest"
+        body="Explore a galaxy of community-built starter themes."
+        licon="/interest.svg"
+      />
+      <Card
+        href="https://www.instagram.com/yaelserr/"
+        title="Instagram"
+        body="Compartir los momentos de mi vida personal."
+        licon="/nstagram.svg"
+      />
+    </ul>
+    <!-- link perfil profesional -->
+    <ul role="list" class="link-card-grid">
+      <h2>Enlaces Profesionales</h2>
+      <h2></h2>
 
-	<h2>Enlaces Profesionales </h2>
-	<h2></h2>
-	
-	<Card
-		href="https://www.linkedin.com/in/max-serrano-294201106/?locale=es_ES"
-		title="Linkedin"
-		body="Perfil personal en sitio."
-		licon="/inkedin.svg"
-	/>
-	<Card
-	
-		href="https://github.com/MaxSerrano"
-		title="Github"
-		body="Repositorio Git"
-		licon="/ithub.svg"
-	/>
-
-	
-</ul>
-<!--Fin link profesional -->
-</div>
-	</main>
+      <Card
+        href="https://www.linkedin.com/in/max-serrano-294201106/?locale=es_ES"
+        title="Linkedin"
+        body="Perfil personal en sitio."
+        licon="/inkedin.svg"
+      />
+      <Card
+        href="https://github.com/MaxSerrano"
+        title="Github"
+        body="Repositorio Git"
+        licon="/ithub.svg"
+      />
+    </ul>
+    <!--Fin link profesional -->
+  </main>
 </Layout>
 
+
 <style>
-	main {
-		margin: auto;
-		padding: 1rem;
-		width: 800px;
-		max-width: calc(100% - 2rem);
-		color: rgb(212, 215, 213);
-		font-size: 20px;
-		line-height: 1.6;
-	}
-	
-	h1 {
-		font-size: 4rem;
-		font-weight: 700;
-		line-height: 1;
-		text-align: center;
-		margin-bottom: 1em;
-	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
-	}
-	.instructions {
-		margin-bottom: 2rem;
-		border: 1px solid rgba(var(--accent-light), 25%);
-		background: linear-gradient(rgba(var(--accent-dark), 66%), rgba(var(--accent-dark), 33%));
-		padding: 1.5rem;
-		border-radius: 8px;
-	}
-	.instructions code {
-		font-size: 0.8em;
-		font-weight: bold;
-		background: rgba(var(--accent-light), 12%);
-		color: rgb(var(--accent-light));
-		border-radius: 4px;
-		padding: 0.3em 0.4em;
-	}
-	.instructions strong {
-		color: rgb(var(--accent-light));
-	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 2rem;
-		padding: 0;
-	}
-	.imagen{
-		width: 200px;
-		height: 200px;
-		border-radius:150px;
-		border: 5px solid #9223ba81;
+  main {
+    margin: auto;
+    padding: 1rem;
+    width: 800px;
+    max-width: calc(100% - 2rem);
+    color: rgb(212, 215, 213);
+    font-size: 20px;
+    line-height: 1.6;
+  }
+  img {
+  max-width: 100%;
+  height: auto;
+}
 
-	}
-	.posicionf
-	{
-	position: relative;
-    top: -80px; 
-    left: 115px;
-    width: 150px;
-    height: 20px;
-    margin: 20%;
+  h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    margin-bottom: 1em;
+  }
+  .text-gradient {
+    background-image: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 400%;
+    background-position: 0%;
+  }
+  .instructions {
+    margin-bottom: 2rem;
+    border: 1px solid rgba(var(--accent-light), 25%);
+    background: linear-gradient(
+      rgba(var(--accent-dark), 66%),
+      rgba(var(--accent-dark), 33%)
+    );
+    padding: 1.5rem;
+    border-radius: 8px;
+  }
+  .instructions code {
+    font-size: 0.8em;
+    font-weight: bold;
+    background: rgba(var(--accent-light), 12%);
+    color: rgb(var(--accent-light));
+    border-radius: 4px;
+    padding: 0.3em 0.4em;
+  }
+  .instructions strong {
+    color: rgb(var(--accent-light));
+  }
+  .link-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+    gap: 2rem;
+    padding: 0;
+  }
+  
+  .imagen {
     display: block;
-	}
-
-	.cardposition{
-		position: relative;
-    	top: -200px; 
-		display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+    height: 200px;
+    border: 50px  #ffffffa9;
+    border-radius: 10%;
+    transition: transform 0.2s ease-in-out;
     
-	}
-	
+    
+  }
+  .imagen:hover {
+    img:hover 
+    transform: scale(10);
+  }
+
+  .cardposition {
+    position: relative;
+    top: -200px;
+    display: block;
+  }
 </style>
