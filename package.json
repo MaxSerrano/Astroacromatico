@@ -10,7 +10,8 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^2.10.3"
+    "astro": "^2.10.3",
+    "contentful": "^10.4.2"
   },
   "devDependencies": {
     "@typescript-eslint/parser": "^6.3.0",
